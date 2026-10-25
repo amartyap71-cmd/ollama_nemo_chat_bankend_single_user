@@ -70,6 +70,7 @@ app.post("/api/stream", async (req, res) => {
         // accumulate the partial content
         content += chunk.message.content
         }
+        await new Promise(resolve => setTimeout(resolve, 300));
     }
 
     // append the accumulated fields to the messages for the next request
